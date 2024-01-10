@@ -2,8 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    // entry: path.resolve(__dirname, '..', './src/index.ts'), // load typescript / javascript file
-    entry: path.resolve(__dirname, '..', './src/index.tsx'), // load react component
+    entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
