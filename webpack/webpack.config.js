@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, '..', './src/index.tsx'),
+    // entry: path.resolve(__dirname, '..', './src/index.tsx'), // load typescript / javascript file
+    entry: path.resolve(__dirname, '..', './src/index.tsx'), // load react component
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
@@ -16,6 +17,17 @@ module.exports = {
                         loader: 'babel-loader'
                     },
                 ]
+            },
+            {
+                test: /\.(sc|c)ss?$/,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                  ]
             }
         ]
     },
